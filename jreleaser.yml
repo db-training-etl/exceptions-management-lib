@@ -23,24 +23,6 @@ project:
 
   docsUrl: "https://github.com/db-training-etl/exceptions-management-library"
 
-  snapshot:
-    # A regex to determine if the project version is snapshot
-    # May define a `JRELEASER_PROJECT_SNAPSHOT_PATTERN` environment variable instead.
-    #
-    pattern: .*-SNAPSHOT
-
-    # The value of the snapshot tag.
-    # May define a `JRELEASER_PROJECT_SNAPSHOT_LABEL` environment variable instead.
-    # If undefined, will use `early-access`.
-    #
-    label: early-access
-
-    # Generate full changelog since last non-snapshot release.
-    # May define a `JRELEASER_PROJECT_SNAPSHOT_FULL_CHANGELOG` environment variable instead.
-    # Default is `false`.
-    #
-    fullChangelog: true
-
   # The project's license.
   # It's recommended to use a valid SPDX identifier if the project is Open Source.
   # See https://spdx.org/licenses.

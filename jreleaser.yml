@@ -70,4 +70,4 @@ release:
 distributions:
   app:
     artifacts:
-      - path: "build/libs/{{projectName}}.jar"
+      - path: "build/libs/{{projectName}}-{{projectVersion}}.jar"

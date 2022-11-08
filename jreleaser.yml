@@ -61,6 +61,7 @@ project:
 
 release:
   github:
+    overwrite: true
     changelog:
       formatted: ALWAYS
       preset: 'conventional-commits'

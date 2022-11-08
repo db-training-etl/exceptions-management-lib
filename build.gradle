@@ -3,13 +3,12 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 plugins {
     id 'org.springframework.boot' version '2.7.5' apply false
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id "maven-publish"
     id 'java'
     id 'jacoco'
-    id "maven-publish"
 }
 
 group = 'com.db'
-version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 configurations {

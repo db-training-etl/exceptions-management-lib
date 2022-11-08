@@ -1,0 +1,72 @@
+#
+project:
+  # The strategy used to parse the project version
+  # May define a `JRELEASER_PROJECT_VERSION_PATTERN` environment variable instead.
+  # Supported values are [`SEMVER`, `CALVER:<format>`, `CHRONVER`, `JAVA_RUNTIME`, `JAVA_MODULE`, `CUSTOM`].
+  # Defaults to `SEMVER`.
+  #
+  versionPattern: SEMVER
+
+  copyright: 2022
+    # A short description (60 chars max).
+    #  Only if configured distributions or announcers.
+  description: Exceptions management library to be consumed by other projects.
+
+  # A list of author names.
+  #  Only if configured distributions or announcers.
+  authors:
+    - gnugomez
+
+    # The project's website.
+    #  Only if configured distributions or announcers.
+  website: "https://github.com/db-training-etl/exceptions-management-library"
+
+  docsUrl: "https://github.com/db-training-etl/exceptions-management-library"
+
+  snapshot:
+    # A regex to determine if the project version is snapshot
+    # May define a `JRELEASER_PROJECT_SNAPSHOT_PATTERN` environment variable instead.
+    #
+    pattern: .*-SNAPSHOT
+
+    # The value of the snapshot tag.
+    # May define a `JRELEASER_PROJECT_SNAPSHOT_LABEL` environment variable instead.
+    # If undefined, will use `early-access`.
+    #
+    label: early-access
+
+    # Generate full changelog since last non-snapshot release.
+    # May define a `JRELEASER_PROJECT_SNAPSHOT_FULL_CHANGELOG` environment variable instead.
+    # Default is `false`.
+    #
+    fullChangelog: true
+
+  # The project's license.
+  # It's recommended to use a valid SPDX identifier if the project is Open Source.
+  # See https://spdx.org/licenses.
+  #  Only if configured distributions or announcers.
+  license: Apache-2.0
+
+  # Required if there are configured distributions.
+  #
+  java:
+    # Maven coordinates: groupId.
+    # Inherited by distributions if they do not define a value for it.
+    #
+    groupId: com.db
+
+    # The minimum Java version required by consumers to run the application.
+    #
+    version: 17
+
+release:
+  github:
+    changelog:
+      formatted: ALWAYS
+      preset: 'conventional-commits'
+      format: '- {{commitShortHash}} {{commitTitle}}'
+
+distributions:
+  app:
+    artifacts:
+      - path: "build/libs/{{projectName}}.jar"

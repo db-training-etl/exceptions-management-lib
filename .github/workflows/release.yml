@@ -20,7 +20,9 @@ jobs:
         run: |
           version=$(cat VERSION)
           version=${version::-9}
-          echo "::set-output name=version::$version"
+          echo "VERSION=$version" >> $GITHUB_OUTPUT
+          echo "Version: $version"
+
   release:
     name: Release
     runs-on: ubuntu-latest

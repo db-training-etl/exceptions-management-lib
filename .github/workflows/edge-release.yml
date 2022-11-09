@@ -13,7 +13,7 @@ jobs:
     name: Precheck
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.precheck.outputs.version }}
+      VERSION: ${{ steps.precheck.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
         id: precheck
         run: |
           version=$(cat VERSION)
-          echo "::set-output name=version::$version"
+          echo "VERSION=$version" >> $GITHUB_OUTPUT
           echo "Version: $version"
 
   release:

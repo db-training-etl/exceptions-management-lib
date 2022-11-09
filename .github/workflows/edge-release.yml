@@ -1,4 +1,4 @@
-name: edge release
+name: Edge Release
 
 on:
   push:

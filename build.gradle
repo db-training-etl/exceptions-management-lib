@@ -78,6 +78,8 @@ publishing {
         gpr(MavenPublication) {
             from(components.java)
 
+            artifactId = "${project.name}${version.toString().contains("SNAPSHOT") ? "-edge" : ""}"
+
             versionMapping {
                 usage('java-api') {
                     fromResolutionOf('runtimeClasspath')

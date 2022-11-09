@@ -12,16 +12,32 @@ project:
     #  Only if configured distributions or announcers.
   description: Exceptions management library to be consumed by other projects.
 
+  snapshot:
+    # A regex to determine if the project version is snapshot
+    # May define a `JRELEASER_PROJECT_SNAPSHOT_PATTERN` environment variable instead.
+    #
+    pattern: .*-SNAPSHOT
+
+    # The value of the snapshot tag.
+    # May define a `JRELEASER_PROJECT_SNAPSHOT_LABEL` environment variable instead.
+    # If undefined, will use `early-access`.
+    #
+    label: edge
+
+    # Generate full changelog since last non-snapshot release.
+    # May define a `JRELEASER_PROJECT_SNAPSHOT_FULL_CHANGELOG` environment variable instead.
+    # Default is `false`.
+    #
+    fullChangelog: true
+
   # A list of author names.
   #  Only if configured distributions or announcers.
   authors:
     - gnugomez
 
-    # The project's website.
-    #  Only if configured distributions or announcers.
-  website: "https://github.com/db-training-etl/exceptions-management-library"
-
-  docsUrl: "https://github.com/db-training-etl/exceptions-management-library"
+  links:
+    homepage: https://github.com/db-training-etl/exceptions-management-library
+    documentation: https://github.com/db-training-etl/exceptions-management-library
 
   # The project's license.
   # It's recommended to use a valid SPDX identifier if the project is Open Source.
